@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Employee Management</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #74b9ff, #00cec9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            background-color: #0984e3;
+            color: white;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #74b9ff;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(1);
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #2d3436;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the User Management Page</h1>
+        <div class="button-container">
+        <form action="adds">
+            <button onclick="addUser()">Add User</button>
+            </form><br>
+            <form action="displays">
+            <button onclick="displayUser()">Display User</button>
+            </form>
+        </div>
+        <div id="output"></div>
+    </div>
+    <script>
+    
+        function addUser() {
+            const userName = prompt('Enter user name:');
+            if (userName) {
+                document.getElementById('output').innerHTML = <p>User <strong>${userName}</strong> added successfully!</p>;
+            }
+        }
+
+        function displayUser() {
+            document.getElementById('output').innerHTML = '<p>Displaying user information...</p>';
+        }
+    </script>
+</body>
+</html>
